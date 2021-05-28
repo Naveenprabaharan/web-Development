@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title> SVG | Canvas Clock </title>
+
+</head>
+
+<svg height="400" width="400">
+		<defs>
+			<linearGradient id="gr" x1="0%" x2="0%" y1="0%" y2="100%">
+				<stop offset="0%" style="stop-color: rgb(0,255,255);,stop-opacity:1"/>
+				<stop offset="100%" style="stop-color:rgb(255,102,255);stop-opacity:1"/>
+			</linearGradient>
+		</defs>
+	</svg>
+
+
+<canvas id="mycanvas" width="400" height="400" style="border: 10px solid red;border-radius: 20px;background-color:#185"></canvas>
+
+
+<script>
+// Find Canvas Element
+var canvas = document.getElementById("mycanvas");
+// Assign variable
+var clk = canvas.getContext("2d");
+// Define Radius
+var radius=canvas.height/2;
+// Fitt all WindowSize
+clk.translate(radius,radius);
+// Define Cicle Radius
+radius=radius * 0.85
+// drawClock Function Call
+drawClock();
+
+  // drawClock Function Define
+  function drawClock()
+  {
+    clk.arc(0,0,radius,0,2*Math.PI);
+    clk.fillStyle="pink";
+    clk.fill();
+    clockFace(clk,radius);
+    // drawNumbers(clk,radius);
+    drawNumbers(clk,radius);
+    // call drawTime function
+     drawTime(clk, radius);
+     setInterval(drawClock, 1000);
+  }
+
+  // ClockFace Fuction Define
+  function clockFace(clk,radius)
+  {
+    //define Outer path
+    clk.beginPath();
+    clk.arc(0,0,radius,0,2*Math.PI);
+    clk.fillStyle="white";
+    clk.fill();
+
+    // Define Gradient for outer ClockFace
+    var grad=clk.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius*1.05);
+    grad.addColorStop(0,"#355");
+    grad.addColorStop(0.5, "white");
+    grad.addColorStop(1,"#355");
+    // define outerface color
+    clk.strokeStyle=grad;
+    clk.lineWidth=radius * .1;
+    clk.stroke();
+
+    //Define Inner Circle
+    clk.beginPath();
+    clk.arc(0,0,radius * 0.1, 0, 2*Math.PI);
+    clk.fillStyle="#355";
+    clk.fill();
+  }
+
+  // Define Function drawNumbers
+  function drawNumbers(clk, radius)
+  {
+  var ang;//for Angel
+  var num;//for Number
+  clk.font = radius * 0.15 + "px arial";
+  clk.textBaseline = "middle";
+  clk.textAlign = "center";
+  for(num = 1; num < 13; num++)
+    {
+      ang = num * Math.PI / 6;
+      clk.rotate(ang);
+      clk.translate(0, -radius * 0.85);
+      clk.rotate(-ang);
+      clk.fillText(num.toString(), 0, 0);
+      clk.rotate(ang);
+      clk.translate(0, radius * 0.85);
+      clk.rotate(-ang);
+    }
+  }
+
+
+  // draw time function define
+  function drawTime(clk, radius)
+  {
+  var now = new Date();
+  var hour = now.getHours();
+  var minute = now.getMinutes();
+  var second = now.getSeconds();
+  //hour
+  hour = hour%12;
+  hour = (hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
+  drawHand(clk, hour, radius*0.5, radius*0.07);
+  //minute
+  minute = (minute*Math.PI/30)+(second*Math.PI/(30*60));
+  drawHand(clk, minute, radius*0.8, radius*0.07);
+  // second
+  second = (second*Math.PI/30);
+  drawHand(clk, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(clk, pos, length, width) {
+  clk.beginPath();
+  clk.lineWidth = width;
+  clk.lineCap = "round";
+  clk.moveTo(0,0);
+  clk.rotate(pos);
+  clk.lineTo(0, -length);
+  clk.stroke();
+  clk.rotate(-pos);
+}
+
+</script>
+
+
+
+</body>
+</html>
