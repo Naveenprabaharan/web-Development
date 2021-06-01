@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    margin: 0 auto;
+    /* background-image: url('favicon.png') ; */
+    background-attachment:fixed ;
+    background-repeat: no-repeat;
+    background-color: lightgray;
+}
+
+
+#header{
+    width: 80%;
+    margin: 0 auto;
+}
+
+#clar{
+    clear: both;
+}
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+
+#header #headerlogo{
+    float: left;
+    display: flex;
+    align-content: center;
+}
+
+.wrapper ul{
+    list-style: none;
+    margin-top: 2%;
+    float: left;
+    
+}
+.clear{
+    clear: both;
+}
+.wrapper ul li{
+    /* display: flex; */
+    width: 100px;
+    /* align-items  : center; */
+    height: 50px;
+    float: left;
+    border:1px solid #fff;
+    background: #262626;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+    position: relative;
+    /* top: -20px; */
+    margin-left: 20px;
+    flex-wrap:nowrap ;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.wrapper ul li li{
+    margin-left: 0px;
+}
+
+.wrapper ul li:hover{
+    background-color: crimson;
+}
+
+.wrapper ul ul{
+    display: none;
+}
+
+.wrapper ul li:hover > ul{
+    display: block;
+}
+
+.wrapper ul ul ul{
+    margin-left: 170px;
+    top: 0;
+    position: absolute;
+    /* display: none ; */
+}
+
+.liele{
+    color:white;
+    text-decoration: none;
+}
+
+main{
+    width: 70%;
+    margin: 0 auto;
+}
+
+main #main #imgm{
+    position: relative;
+    top: 50px;
+    left: 50%;
+    width: 15%;
+    transform: translateX(-50%);
+}
+
+/* #main h1{
+    display: inline;
+    
+} */
+
+#main h2{
+    display: inline;
+}
+
+main #main,main #mainsec{
+    width:100%;
+    margin: 0 auto;
+}
+
+main #main h1,main #mainsec h1{
+    margin-top: 20px;
+    font-size: 50px;
+}
+main #mainsec h1{
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+main #main p:first-of-type{
+    color: darkslategray;
+    margin-top: 100px;
+    font-size: 20px;
+    text-align: justify;
+}
+main  p{
+    color: darkslategray;
+    margin-top: 50px;
+    font-size: 20px;
+    text-align: justify;
+}
+main  #list{
+    list-style: inside;
+    color: darkslategray;
+    margin-top: 50px;
+    font-size: 30px;
+    text-align: justify;
+    
+}
+
+
+#footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    padding-left: 300px;
+    background-color: lightyellow;
+    margin: 0 auto;
+}
+
+
+
+
