@@ -1,0 +1,76 @@
+.page{
+		width: 90%;
+		margin:0 auto;
+		min-width: 550px;
+		
+	}
+
+	.main{
+		background-color:lightgray;
+	}
+
+	.left{
+		width: 20%;
+		float: left;
+	}	
+	.mainbar{
+		width: 65%;
+		float: left;
+		margin-left: 35px;
+	}
+	.sidebar{
+		width: 30%;
+		float: right;
+	}
+
+	.footer{
+		text-align: center;
+	}
+	.clear{
+		clear: both;
+	}
+
+	
+	#main{
+		width: 80%;
+		
+		margin: auto;
+	}
+	#head{
+		text-align: center;
+		background-color: lightslategray;
+	}
+	#intent{
+		text-indent: 10%;
+		text-align: justify;
+	}
+	#main{
+		/* background-color: white; */
+	}
+	table,th,td{
+		width:90%;
+		text-align: center;
+		border: 2px solid;
+		padding: 5px;
+		border-collapse: collapse;
+		margin: auto;
+	}
+	#ski{
+		width: 60%;
+	}
+	.tab{
+		text-align: left;
+	}
+
+	
+	.link{
+		text-decoration: none;
+		color: black;
+	}
+	.heading{
+		text-shadow: 2px 2px 5px red;
+	}
+
+	#pic{
+		padding-left: 40px;
+	}
